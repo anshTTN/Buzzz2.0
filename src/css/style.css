@@ -1,0 +1,580 @@
+/* **************Ankit's CSS************ */
+.post{
+  background-color: white;
+width: 35.3vw;
+margin: auto;
+ border-radius: 1rem;
+}
+
+.post hr{
+  visibility: hidden;
+}
+
+.caption{
+  text-align: left;
+
+}
+
+.post-img-box{
+  border-radius: 1rem;
+  height: 65%;
+  width: 90%;
+  margin: auto;
+}
+
+.post-img{
+  width: 100%;
+  height: 100%;
+   border-radius: 1rem;
+}
+
+.emote{
+  color: #32A89C;
+}
+
+.comment-text{
+  position: relative;
+  width: 28vw;
+  border-radius: 0.78rem;
+}
+
+
+.activity{
+  background-color: white;
+  width: 19.2vw;
+  border-radius: 1rem;
+}
+
+.activity div{
+  text-align: left;
+}
+
+.activity p{
+  margin-left: 5%;
+}
+
+.activity hr{
+  visibility: hidden;
+}
+
+
+.searched-users{
+  width: 80%;
+  margin: auto;
+}
+
+.signup hr{
+  visibility: hidden;
+}
+
+/* *******Ansh's CSS********** */
+.bgColor{
+background-color: rgb(213 213 213);
+}
+*{
+  padding:0px;
+  margin:0px;
+  font-family: cursive;
+}
+
+.logo{
+  height: 20px;
+  width: 20px;
+}
+.circle{
+  border: 1px solid black;
+  width: 33px;
+  height: 30px;
+  border-radius: 50%;
+
+}
+.size{
+  width: 10%;
+}
+.profileImg{
+  height: 114px;
+  border: 1px solid black;
+  width: 36%;
+  border-radius: 55%;
+  position: relative;
+  left: 32%;
+  bottom: 55px;
+}
+.backgroundImg{
+  width: 100%;
+  height: 30vh;
+  border-radius: 4%;
+}
+.profileContainer{
+  background-color: white;
+  border-radius: 4%;
+  height: 63vh;
+}
+.profileName{
+  text-align:center;
+  position: relative;
+  bottom:50px;
+  font-weight: bold;
+  font-size: 29px;
+}
+.profileStatus{
+  text-align:center;
+  position: relative;
+  bottom:70px;
+  font-size:19px;
+  color: rgb(114, 104, 104);
+}
+.profileViewsNo{
+  text-align:center;
+  position: relative;
+  bottom:59px;
+  font-weight: bold;
+  font-size: 29px;
+  color: rgb(114, 104, 104);
+}
+.profileViewsText{
+  text-align:center;
+  position: relative;
+  bottom:64px;
+  font-size: 16px;
+  color: rgb(114, 104, 104);
+}
+.searchBar{
+  /* width: 35vw; */
+  width: 78%;
+  background-color: white;
+  height: 8vh;
+  border-radius: 1vw;
+  margin-left: 5.5vw;
+}
+.col2Size{
+  width: 37vw;
+}
+.search{
+  border-radius: 3vw;
+  position: relative;
+  top: 1vh;
+  width: 18vw;
+  right: 2vw;
+}
+.search span{
+  position: relative;
+  top: 1.2vh;
+}
+.uploadImage{
+  position: relative;
+  right: 13vw;
+  cursor: pointer;
+}
+.postBtn{
+  width: 7vw;
+}
+.searchInput{
+  position: relative;
+  top: 13%;
+  height: 4vh;
+  border-radius: 3vw;
+  border: 0;
+}
+.imageIcon{
+  color: rgba(81, 149, 12, 0.952);
+  font-size: 4vh;
+  position: relative;
+  top: 0.4vh;
+}
+.imageText{
+  color: rgb(78, 83, 85);
+  font-size: 2.3vh;
+  position: relative;
+  top: 2.2vh;
+  left: 1.3vw;
+}
+.searchIcon{
+  position: relative;
+    left: 47%;
+    font-size:3vh;
+}
+.searchIcon1{
+  position: relative;
+    left: 38%;
+    font-size:3vh;
+}
+.addFriendInSuggestion{
+  color: blue;
+}
+
+
+/*------------------------------------Ankita's CSS----------------------------------------------*/
+
+section{
+  position :absolute;
+  width: 50vw;
+  height: 50vh;
+
+  top:50%;
+  left:50%;
+  margin-right: -50%;
+  transform : translate(-50% , -50%);
+
+}
+
+.form-content{
+  padding-top: 15px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+.heading_1{
+  padding-top: 10px;
+}
+.heading_2{
+  padding-bottom: 10px;
+}
+.row_1{
+  padding-top: 10px;
+}
+
+
+.loginlogo{
+  padding-top: 10px;
+  text-align: center;
+}
+.loginlogo img {
+  height: 70px;
+    width: auto;
+
+}
+
+#btn_1{
+  height: 40px;
+  width: 170px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  background-color: #FFFFFF;
+  color : #FF1493;
+  border-color: #FF1493;
+
+  border-radius: 50px;
+
+}
+.btn_1{
+  padding-top: 20px;
+}
+
+#btn_2{
+  height: 40px;
+  width: 170px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  background-color: #800080;
+  border: none;
+
+  border-radius: 50px;
+}
+.googleBtn{
+  width: 12vw;
+  height:6vh;
+  margin-left: 4.5vw;
+}
+
+                 /*--------------------FriendListCSS------------------*/
+
+.searched-users{
+  width: 80%;
+  margin: auto;
+}
+
+.messagediv{
+  padding-bottom: 10px;
+}
+
+.signupLogin{
+  width: 15%;
+}
+
+.forgotInput{
+  width: 35%;
+}
+
+/* -------------------------------------- Profile 's CSS ------------------------*/
+
+
+.profileCover{
+  height: 320px;
+  position: relative;
+
+}
+
+.profileCoverImg{
+  width: 100%;
+  height: 299;
+  object-fit: cover;
+}
+
+.profileUserImg{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  top: 300px;
+  border: 3px solid white;
+
+}
+
+.profileInfo{
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.friend_button{
+  padding-bottom: 10px;
+}
+
+.friend_btn{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+  }
+
+  .message_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color:  	#A7C7E7;
+
+  }
+
+  .row_btn{
+    padding-top: 30px;
+  }
+
+  .linkStyle{
+    color: black;
+    text-decoration: none;
+  }
+  .linkStyle :hover{
+    color: #6b91d8;
+  }
+
+
+  .profileCoverImg-1{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .profileUserImg-1{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0; 
+    margin: 0px auto 0px auto;
+    top: 215px;
+    border: 3px solid white;
+  }
+
+  .profileInfo-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .profileLabel{
+    font-weight: bold;
+    margin-top: 1.34vh;
+  }
+  .profileInput{
+    border:1px solid black;
+    width: 28vw;
+    margin-left: 1vw;
+    font-size: 2.3vh;
+    color: #646464;
+    height: 4.4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .uploadCover{
+    position: relative;
+    left: 80%;
+    font-size: 18px;
+  }
+  .uploadCover p{
+    font-weight: bold;
+  }
+  .uploadProfile{
+    position: relative;
+    left: 45%;
+    font-size: 18px;
+  }
+  .uploadProfile p{
+    font-weight: bold;
+  }
+
+  .adminCoverPic{
+    padding-top: 10%;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .adminProfilePic{
+  height: 95px;
+  /* border: 1px solid black; */
+  width: 40%;
+  border-radius: 50%;
+  position: relative;
+  /* left: 2%; */
+  bottom: 50px;
+
+  }
+
+  .adminProfile{
+    margin-top: 10%;
+    width: 19.2vw;
+    border-radius: 1rem;
+    /* padding-left: 5%; */
+  }
+
+  .profileViewsNo{
+    text-align:center;
+    position: relative;
+    bottom:40px;
+    font-weight: bold;
+    font-size: 29px;
+    color: rgb(114, 104, 104);
+  }
+  .profileViewsText{
+    text-align:center;
+    position: relative;
+    bottom:40px;
+    font-size: 16px;
+    color: rgb(114, 104, 104);
+  }
+
+  .activityCon{
+    background-color: white;
+    width: 19.2vw;
+    border-radius: 1rem;
+    margin-top: 10%;
+
+  }
+
+  .activityCon p{
+    margin-left: 5%;
+  }
+
+  .activityCon h4{
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .Rightcontainer{
+    margin-top: 10%;
+
+  }
+
+  .searchContainer{
+    margin-top: 5%;
+
+  }
+
+  /*------------------------------------Contact 's CSS-----------------------------------*/
+  /* .contactContent{
+    align-items: ;
+  } */
+
+  /* .input-group-addon {
+    border-radius: 4px;
+    border: 0px;
+    background-color: transparent;
+
+  } */
+
+  .headingContainer{
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 1200px){
+    .FeedContent{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .FeedContent .adminProfile
+  {
+    /* max-width: 100%;
+    width: 80%; */
+    visibility: hidden;
+  }
+
+  .activityCon
+  {
+    /* max-width: 100%;
+    width: 80%; */
+    visibility: hidden;
+  }
+
+  .contactContainer{
+    /* max-width: 100%;
+    width: 80%; */
+    visibility: hidden;
+
+  }
+
+  .suggestionContainer{
+    /* max-width: 100%;
+    width: 80%; */
+    visibility: hidden;
+
+  }
+
+  .postContainer{
+    max-width: 100%;
+    width: 80%;
+
+  }
+
+  .post-body
+  {
+    order: -1;
+    /* background: red;
+    padding: 8px;
+    margin: 10px; */
+  }
+
+  .adminProfile
+  {
+    /* order: 0; */
+    visibility: hidden;
+  }
+
+  .activity
+  {
+    /* order: 1; */
+    visibility: hidden;
+  }
+}
+.friendsHeader{
+  color:black;
+  text-decoration: none;
+}

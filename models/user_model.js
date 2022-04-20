@@ -46,8 +46,18 @@ const UserRegistrationSchema = new Schema({
     type: String,
     default: null,
   },
-  requests: [],
-  friends:[],
+  requests: [
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"user"
+    }
+  ],
+  friends:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"user"
+    }
+  ],
   password: {
     type: String,
     default: null,
@@ -66,20 +76,12 @@ const UserRegistrationSchema = new Schema({
     default:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9SPHGbT7zpUnQWxX6G23hhBVjxxAioJDoSNePax1i6FPVuO1bD2NweVg44RenkPB3vTI&usqp=CAU",
   },
-  posts:[{
-      post_text:{type:String,default:null},
-      image_url:{type:String,default:null},
-      like:{type:Number,default:0},
-      dislike:{type:Number,default:0},
-      comments:[
-          {
-              userName:{type:String,default:null},
-              comment:{type:String,default:null}
-          }
-      ],
-      report:{type:Number,default:0},
-      created_at:{type:Date,default:null}
-  }]
+  posts:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"post"
+    }
+  ]
 });
 
 module.exports = mongoose.model("user", UserRegistrationSchema);

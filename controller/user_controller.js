@@ -22,7 +22,8 @@ exports.googleLogin=async (req,res)=>{
         if(user){
             const data={
                 user:{
-                    email:email
+                    email:email,
+                    _id:user._id
                 }
             }
             const authToken=jwt.sign(data,JWT_SECRET);
@@ -38,7 +39,8 @@ exports.googleLogin=async (req,res)=>{
                 userDetails.save().then(resp=>{
                     const data={
                         user:{
-                            email:email
+                            email:email,
+                            _id:user._id
                         }
                     }
                     const authToken=jwt.sign(data,JWT_SECRET);
@@ -194,7 +196,8 @@ exports.userLogin=(req,res)=>{
             else{
                 const data={
                     user:{
-                        email:email
+                        email:email,
+                        _id:user._id
                     }
                 }
                 const authToken=jwt.sign(data,JWT_SECRET);

@@ -5,7 +5,7 @@ const auth=require('../controller/auth');
 
 
 
-// router.post("/searchfriends",auth.verifyUsers, friends.searchFriends);   
+// router.post("/searchfriends",auth.verifyUsers, friends.searchFriends);
 
 router.post("/addfriend",auth.verifyUsers, friends.addFriend);
 
@@ -14,6 +14,7 @@ router.post("/searchallfriends",auth.verifyUsers, friends.searchAllFriends);  /*
 
 router.post("/getFriends", friends.getFriends);
 
+router.post("/removefriend",auth.verifyUsers, friends.removeFriend);  
 
 
 module.exports = router;

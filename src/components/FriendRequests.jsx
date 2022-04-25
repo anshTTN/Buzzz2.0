@@ -50,7 +50,7 @@ function acceptReq(e){
 acceptFriendRequest(e.target.value);
 }
 
-async function acceptFriendRequest(email){
+async function acceptFriendRequest(id){
  const result = await fetch(`/acceptfriendrequest`,{
        method: 'POST',
        headers:{
@@ -58,7 +58,7 @@ async function acceptFriendRequest(email){
          'auth-token':localStorage.getItem('token')
        },
        body:JSON.stringify({
-           email: email
+           _id: id
          })
      });
      const data = await result.json();
@@ -109,7 +109,7 @@ if(loading){
 
             <h3>{request.first_name} {request.last_name}</h3>
 
-         <button className="btn btn-primary btn-md ms-4" onClick={acceptReq} value={request.email}> accept </button>
+         <button className="btn btn-primary btn-md ms-4" onClick={acceptReq} value={request._id}> accept </button>
           </div>
 
         ))}

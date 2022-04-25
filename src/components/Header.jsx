@@ -27,7 +27,7 @@ function Header() {
           setCoverImg(data.user.coverImg)
           setProfileImg(data.user.profileImg)
   }
-  
+
   useEffect(()=>{
     getUser();
   },[])
@@ -39,14 +39,14 @@ function Header() {
 
   return (
   <>
-<nav className="navbar navbar-light bg-light border-bottom sticky-top">
+<nav className="navbar navbar-light border-bottom sticky-top">
   <div className="container-fluid">
   <Link className="navbar-brand" to="/feedsPage">
-      <img src={logo} alt="" width="100" height="80"/>
+      <img className="logo-circle" src={logo} alt=""/>
     </Link>
 
     <div className='d-flex'>
-    <Link to="/friendRequests" > 
+    <Link to="/friendRequests" >
     <p className="me-5 mt-3 friendsHeader" >Friend Requests </p>
     </Link>
       <Link to='/MyProfile'>
@@ -59,8 +59,8 @@ function Header() {
       ):(
         <p className="me-3 mt-3" >{first_name} </p>
       )}
-   
-      
+
+
     <button type="submit" onClick={logoutBtn}  id="btn_2" className='btn btn-primary mt-2'>Logout</button>
 
     </div>

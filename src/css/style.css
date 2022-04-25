@@ -6,15 +6,20 @@ margin: auto;
  border-radius: 1rem;
 }
 
-.post hr{
+/* .post hr{
   visibility: hidden;
-}
+} */
 
 .caption{
-  text-align: left;
-
+  font-size: 20px;
 }
-
+.userPostIcon{
+font-size: 20px;
+}
+.postUserName{
+  font-weight: bold;
+  font-size: 27px;
+}
 .post-img-box{
   border-radius: 1rem;
   height: 65%;
@@ -24,18 +29,30 @@ margin: auto;
 
 .post-img{
   width: 100%;
-  height: 100%;
+  height: 55vh;
    border-radius: 1rem;
 }
 
 .emote{
-  color: #32A89C;
+  font-size: 32px;
+}.emote1{
+  font-size: 32px;
+  color: #345ba4;
+}
+.dislike{
+  position: relative;
+  bottom: 5px;
 }
 
+ i:hover{
+   cursor: pointer;
+  font-size: 45px;
+}
 .comment-text{
   position: relative;
-  width: 28vw;
+  width: 30vw;
   border-radius: 0.78rem;
+height: 5vh;
 }
 
 
@@ -67,10 +84,12 @@ margin: auto;
   visibility: hidden;
 }
 
+  
+
 /* *******Ansh's CSS********** */
 .bgColor{
-background-color: rgb(213 213 213);
-}
+  background-color: #ECF0F3;
+  }
 *{
   padding:0px;
   margin:0px;
@@ -85,6 +104,12 @@ background-color: rgb(213 213 213);
   border: 1px solid black;
   width: 33px;
   height: 30px;
+  border-radius: 50%;
+
+}.circlePost{
+  /* border: 1px solid black; */
+  width: 43px;
+  height: 40px;
   border-radius: 50%;
 
 }
@@ -168,6 +193,21 @@ background-color: rgb(213 213 213);
 }
 .postBtn{
   width: 7vw;
+}.commentBtn{
+  width: 7vw;
+  margin-top: 6px;
+}
+.horizontalRule{
+  width: 85%;
+    margin: 10px auto 0px auto;
+}
+.showComments{
+  margin-left: 27vw;
+  font-size: 20px;
+  cursor: pointer;
+}
+.showComments:hover{
+  font-size: 22px;
 }
 .searchInput{
   position: relative;
@@ -578,3 +618,24 @@ section{
   color:black;
   text-decoration: none;
 }
+.commentUserName{
+font-weight: bold;
+}
+nav{
+  background-color: #BCCDE5;
+  }
+  
+  .navbar h5{
+  color: white;
+  }
+  
+  .logo-circle{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  
+  }
+  
+  .card hr{
+  visibility: hidden;
+  }

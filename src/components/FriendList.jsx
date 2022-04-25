@@ -12,12 +12,15 @@ const FriendList = () => {
   const [loading, setLoading] = useState(true);
 
      async function searchFriends(){
-      const result = await fetch(`/searchfriends`,{
-            method: 'GET',
+      const result = await fetch(`/searchallfriends`,{
+            method: 'POST',
             headers:{
               'content-Type':'application/json',
               'auth-token':localStorage.getItem('token')
             },
+            body:JSON.stringify({
+                limit: false
+              })
           });
           const data = await result.json();
           setFriends(data.users);

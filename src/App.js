@@ -64,7 +64,6 @@ function App() {
         <Route path="/users/:name" element={<UserResults />} />
         <Route path="/friendList" element={<FriendList />} />
       </Routes>
-      {/* <AuthRoute path='/feedsPage' component={FeedsPage}/> */}
     </Router>
   );
 }

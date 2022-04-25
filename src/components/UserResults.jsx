@@ -6,7 +6,7 @@ import Alerts from './Alerts';
 
 function UserResults(){
 
-  const [senderEmail, setSenderEmail] = useState(null);
+  const [senderId, setSenderId] = useState(null);
   const [type,setType]=useState(null);
   const [msg,setMsg]=useState(null);
 
@@ -31,9 +31,9 @@ function UserResults(){
 
  function addFriend(e){
 
-  const email = e.target.value;
+  const id = e.target.value;
 
-  async function sendReq(email){
+  async function sendReq(id){
    const result = await fetch(`/addfriend`,{
          method: 'POST',
          headers:{
@@ -41,7 +41,7 @@ function UserResults(){
            'auth-token':localStorage.getItem('token')
          },
          body:JSON.stringify({
-             email: email
+             _id: id
            })
        });
        const data = await result.json();
@@ -58,16 +58,16 @@ function UserResults(){
           break;
         case "checkOwnRequest":
           showAlert("alert alert-danger"," Please check your friend requests");
-          break;  
-      
+          break;
+
           default:
           showAlert("alert alert-danger"," Something went wrong! could not send request");
-      
-      
+
+
       }
 
  }
- sendReq(email);
+ sendReq(id);
 
 }
 
@@ -107,7 +107,7 @@ searchAllUsers();
           });
           const data = await result.json();
             setUsers(data.users);
-            setSenderEmail(data.senderEmail);
+            setSenderId(data.senderId);
             setLoading(false);
 
     }
@@ -120,11 +120,14 @@ searchAllUsers();
            headers:{
              'content-Type':'application/json',
              'auth-token':localStorage.getItem('token')
-           }
+           },
+           body:JSON.stringify({
+               limit: false
+             })
          });
          const data = await result.json();
            setUsers(data.users);
-           setSenderEmail(data.senderEmail);
+           setSenderId(data.senderId);
            setLoading(false);
     }
 
@@ -171,9 +174,10 @@ searchAllUsers();
 
 
       <div className="card col-md-4 col-sm-6 col-xs-12">
-        <img className="card-img-top" src={UserImage} alt="Card image cap" />
+
+        <img className="card-img-top" src={user.profileImg} alt="Card image cap" />
         <div className="card-body">
-            <h5 className="card-title">{user.first_name}</h5>
+            <h5 className="card-title">{user.first_name} {user.last_name}</h5>
             <hr className="invisible"/>
             <div className="d-flex">
             <i className="fa-solid fa-location-dot"></i>
@@ -183,7 +187,7 @@ searchAllUsers();
             <div className=' buttonsforusers'>
                 <div className="row">
                     <div className="col-md-6 col-sm-12 col-xs-12 messagediv"><center><a href="#" className="btn btn-primary">Message</a></center></div>
-                    <div className="col-md-6 col-sm-12 col-xs-12 removediv"><center><button className="btn btn-primary" onClick={addFriend} value={user.email}>Add Friend</button></center></div>
+                    <div className="col-md-6 col-sm-12 col-xs-12 removediv"><center><button className="btn btn-primary" onClick={addFriend} value={user._id}>Add Friend</button></center></div>
                 </div>
             </div>
         </div>

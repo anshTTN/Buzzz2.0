@@ -20,7 +20,10 @@ async function searchFriends(){
        headers:{
          'content-Type':'application/json',
          'auth-token':localStorage.getItem('token')
-       }
+       },
+       body:JSON.stringify({
+           limit: true
+         })
      });
      const data = await result.json();
        setUsers(data.users);
@@ -39,7 +42,7 @@ if(loading){
       <div className='py-4 activity border contactContainer'>
              <h4 className="px-3"> Contacts </h4>
                <hr />
-        <h4 className="px-3"> No friends yet </h4>       
+        <h4 className="px-3"> No friends yet </h4>
       </div>
     </>
     );
@@ -64,9 +67,9 @@ if(loading){
 {users.map((user) => (
 
   <div className="d-flex px-3">
-  <img className="circle me-3" src={profile} alt="" />
+  <img className="circle me-3" src={user.profileImg} alt="" />
 
-    <p>{user.first_name}</p>
+    <p>{user.first_name} {user.last_name}</p>
   </div>
 
 ))}

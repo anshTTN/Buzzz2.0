@@ -19,7 +19,10 @@ function SuggestedContacts() {
          headers:{
            'content-Type':'application/json',
            'auth-token':localStorage.getItem('token')
-         }
+         },
+         body:JSON.stringify({
+             limit: true
+           })
        });
        const data = await result.json();
          setUsers(data.users);
@@ -71,9 +74,9 @@ function SuggestedContacts() {
       {users.map((user) => (
 
         <div className="d-flex px-3">
-        <img className="circle me-3" src={profile} alt="" />
+        <img className="circle me-3" src={user.profileImg} alt="" />
 
-          <p>{user.first_name}</p>
+          <p>{user.first_name} {user.last_name}</p>
         </div>
 
       ))}

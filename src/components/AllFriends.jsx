@@ -26,6 +26,42 @@ function AllFriends(){
          setLoading(false);
   }
 
+
+{/*---------------- Remove friend -------------*/}
+
+
+function removeFriend(e){
+  if( window.confirm("Are you sure you want to remove?")){
+
+    removeAFriend(e.target.value);
+
+  }
+
+}
+
+
+async function removeAFriend(id){
+ const result = await fetch(`/removefriend`,{
+       method: 'POST',
+       headers:{
+         'content-Type':'application/json',
+         'auth-token':localStorage.getItem('token')
+       },
+       body:JSON.stringify({
+           _id: id
+         })
+     });
+     const data = await result.json();
+      if(data.status == "success"){
+         setFriends(friends.filter((item)=> item._id != id))
+        setLoading(false);
+      }
+
+}
+
+
+
+
   if(loading){
     return(
       <h1> Loading .. </h1>
@@ -56,9 +92,9 @@ return (
 {friends.map((friend) => (
 
 <div className="card col-md-4 col-sm-6 col-xs-12">
-  <img className="card-img-top" src={UserImage} alt="Card image cap" />
+  <img className="card-img-top" src={friend.profileImg} alt="Card image cap" />
   <div className="card-body">
-      <h5 className="card-title">{friend.first_name}</h5>
+      <h5 className="card-title">{friend.first_name} {friend.last_name}</h5>
       <hr className="invisible"/>
       <div className="d-flex">
       <i className="fa-solid fa-location-dot"></i>
@@ -67,8 +103,8 @@ return (
 
       <div className=' buttonsforusers'>
           <div className="row">
-              <div className="col-md-6 col-sm-12 col-xs-12 messagediv"><center><a href="#" className="btn btn-primary">Message</a></center></div>
-              <div className="col-md-6 col-sm-12 col-xs-12 removediv"><center><a href="#" className="btn btn-primary">Remove</a></center></div>
+              <div className="col-md-6 col-sm-12 col-xs-12 messagediv"><center><button className="btn btn-primary">Message</button></center></div>
+              <div className="col-md-6 col-sm-12 col-xs-12 removediv"><center><button className="btn btn-primary" value={friend._id} onClick={removeFriend}>Remove</button></center></div>
           </div>
       </div>
   </div>

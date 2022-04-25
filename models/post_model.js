@@ -23,7 +23,10 @@ const PostSchema = new Schema({
       comment: { type: String, default: null },
     },
   ],
-  report: { type: Number, default: 0 },
+  report: [{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"user"
+  }],
   userImage:{
       type:String,
       default:null

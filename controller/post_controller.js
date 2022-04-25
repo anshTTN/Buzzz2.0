@@ -104,10 +104,12 @@ exports.comment=async (req,res)=>{
 exports.getPosts=async (req,res)=>{
     try{
         const user=await usersData.findOne({email:req.user.email})
+        let myPosts=await postData.find({userId:req.user._id})
         let posts=await postData.find({userId:{
             $in:user.friends
         }})
-            return res.status(200).json({status:"success",posts:posts})
+        let allPosts= posts.concat(myPosts)
+            return res.status(200).json({status:"success",posts:allPosts})
     }
     catch{
         return res.status(400).json({status:"failure",message:"Failed to fetch posts.Try again..."})
@@ -127,3 +129,45 @@ exports.getPostDetails=async(req,res)=>{
         return res.status(400).json({status:"failure",message:"Failed to fetch post details"})
     }
 }
+
+
+
+
+exports.reportPost=async (req,res)=>{
+    const post=await postData.findById(req.params.id)
+
+        if(post.report.includes(req.user._id)){
+                return res.status(200).json({status:"success",message:"Post already reported"})
+        }else{
+            post.report.push(req.user._id);
+            post.save().then(data=>{
+                return res.status(200).json({status:"success",message:"Post Reported"})
+            }).catch(err=>{
+                return res.status(400).json({status:"failure",message:"Failed to report post"})
+            })
+        }
+}
+
+
+
+
+exports.deletePost=async (req,res)=>{
+    const post=await postData.findById(req.params.id)
+    const user= await usersData.findById(req.user._id)
+
+        try{
+            await post.remove();
+            const index=user.posts.indexOf(req.params.id);
+            user.posts.splice(index,1);
+             user.save().then(data=>{
+                return res.status(200).json({status:"success",message:"Post deleted"})
+            }).catch(err=>{
+                return res.status(400).json({status:"failure",message:"Failed to delete post"})
+            })
+            
+        }
+        catch{
+            return res.status(400).json({status:"failure",message:"Post not deleted"})
+        }
+}
+

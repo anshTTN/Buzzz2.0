@@ -6,6 +6,8 @@ const auth=require('../controller/auth');
 router.post("/createPost",auth.verifyUsers, postController.createPost);
 router.post("/getPosts", auth.verifyUsers, postController.getPosts);
 router.post("/likeAndDislikePost/:like/:id", auth.verifyUsers, postController.likeAndDislikePost);
+router.post("/reportPost/:id", auth.verifyUsers, postController.reportPost);
+router.delete("/deletePost/:id", auth.verifyUsers, postController.deletePost);
 router.post("/comment/:id", auth.verifyUsers, postController.comment);
 router.get("/getPostDetail/:id",postController.getPostDetails);
 

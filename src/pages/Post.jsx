@@ -36,17 +36,19 @@ async function removePost(id){
     },
   });
 
-  
+
 
   const data = await res.json();
 
-  console.log(data.status);
+  if(data.status == "success"){
+      setPosts(posts.filter((item)=> item._id != id))
+  }
 
   // setPosts(data.posts);
 
   // setLoading(false);
 
-  
+
 
 }
 
@@ -68,7 +70,7 @@ async function getPosts(){
 
   setLoading(false);
 
-  
+
 
 }
 
@@ -117,7 +119,7 @@ if(loading){
 
 
 <div className="card col-md-4 col-sm-6 col-xs-12 userPost">
-  
+
 
   <center> <img className="postImage" src={post.image_url} alt="Card image cap" />  </center>
   <div className="d-flex justify-content-around postContent">
@@ -146,4 +148,3 @@ if(loading){
 }
 
 export default Post
-

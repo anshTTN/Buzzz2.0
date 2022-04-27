@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState , useEffect } from 'react';
-
+import Alerts from '../components/Alerts';
 
 
 const User = () => {
@@ -10,43 +10,58 @@ const User = () => {
   const [loading , setLoading] = useState(true);
 
 
+  const [type,setType]=useState(null);
+  const [msg,setMsg]=useState(null);
+
+
+  const showAlert=(type,msg)=>{
+    setType(type);
+    setMsg(msg);
+    setTimeout(()=>{
+      setType(null)
+      setMsg(null)
+    },5000)
+  }
+
+
+
   useEffect(() => {
     getUsers();
   } , [])
 
-  // function deleteProfile(e){
+  function deleteUser(e){
 
-  //   console.log(e.target.value);
+    removeUser(e.target.value);
 
-  // // removeProfile(e.target.value);
+  }
 
-  // }
+  async function removeUser(id){
 
-  // async function removeProfile(id){
+    const res = await fetch(`/deleteuser`, {
+      method: "DELETE",
+      headers: {
+        "content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+      body:JSON.stringify({
+          id: id
+        })
+    });
 
-  //   const res = await fetch(`/deleteProfile/${id}`, {
-  //     method: "DELETE",
-  //     headers: {
-  //       "content-Type": "application/json",
-  //       "auth-token": localStorage.getItem("token"),
-  //     },
-  //   });
 
 
-  
-  //   const data = await res.json();
+    const data = await res.json();
 
-  //   console.log(data.status);
-  
-  //   setUsers(data.users);
+  if(data.status == "success"){
+     showAlert("alert alert-success", "User deleted successfully");
+      setUsers(users.filter((item)=> item._id != id))
+  }else{
+    console.log(data.status);
+  }
 
-  //   console.log(data.users);
+  }
 
-  //   // setLoading(false);
 
-  // }
-
-  
 
 
   async function getUsers(){
@@ -60,9 +75,9 @@ const User = () => {
     });
 
 
-  
+
     const data = await res.json();
-  
+
     setUsers(data.users);
 
     // console.log(data.users);
@@ -77,7 +92,7 @@ const User = () => {
         <h1> Loading .. </h1>
       )
     }else{
-    
+
       if(users.length == 0){
         return (
           <>
@@ -97,6 +112,7 @@ const User = () => {
 
 <h2>Profiles</h2>
 
+<Alerts type={type} msg={msg} />
 
 <hr className="invisible"/>
 
@@ -113,22 +129,21 @@ const User = () => {
 
     <div className='buttonsUsers'>
         <div className="d-flex">
-            <div className="col-md-6 col-sm-12 col-xs-12 postBtn"><center><button className="btn btn-primary " >Delete</button></center></div>
-            {/* <div className="col-md-6 col-sm-12 col-xs-12 removediv"><center><button className="btn btn-primary" onClick={addFriend} value={user._id}>Add Friend</button></center></div> */}
+            <div className="col-md-6 col-sm-12 col-xs-12 postBtn"><center><button className="btn btn-primary " value={user._id} onClick={deleteUser}>Delete</button></center></div>
         </div>
     </div>
 </div>
-</div> 
+</div>
 
 ))}
 
   </div>
-  
+
   </>
         )
-  
-    
-  
+
+
+
   }
 }
 

@@ -11,6 +11,10 @@ import Login from "./components/Login";
 import AuthRoute from "./components/AuthRoute";
 import MyProfile from "./components/MyProfile";
 import ForgotPassword from "./components/ForgotPassword";
+import AdminDashboard from "./components/Admin/adminDashboard";
+import Post from './pages/Post';
+import User from './pages/User';
+
 
 function App() {
   return (
@@ -24,6 +28,14 @@ function App() {
           element={
             <AuthRoute>
               <FeedsPage />
+            </AuthRoute>
+          }
+        />
+        <Route
+          path="/adminDashboard"
+          element={
+            <AuthRoute>
+              < AdminDashboard/>
             </AuthRoute>
           }
         />
@@ -63,6 +75,13 @@ function App() {
         <Route path="/forgotpswd" element={<ForgotPassword />} />
         <Route path="/users/:name" element={<UserResults />} />
         <Route path="/friendList" element={<FriendList />} />
+
+        <Route path="/post" element={<Post />} />
+        <Route path="/user" element={<User />} />
+
+
+
+        
       </Routes>
     </Router>
   );

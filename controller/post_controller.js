@@ -154,6 +154,7 @@ exports.reportPost=async (req,res)=>{
 exports.deletePost=async (req,res)=>{
     const post=await postData.findById(req.params.id)
     const user= await usersData.findById(req.user._id)
+    // console.log("its working now...");
 
         try{
             await post.remove();

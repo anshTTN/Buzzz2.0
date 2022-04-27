@@ -71,3 +71,26 @@ exports.saveProfile=(req,res)=>{
     }
 
 }
+
+
+
+// exports.deleteProfile=async (req,res)=>{
+//     // const post=await postData.findById(req.params.id)
+//     const user= await usersData.findById(req.user._id)
+//     console.log("its working now...");
+
+        // try{
+        //     await user.remove();
+        //     const index=user.indexOf(req.params.id);
+        //     user.splice(index,1);
+        //      user.save().then(data=>{
+        //         return res.status(200).json({status:"success",message:"Profile deleted"})
+        //     }).catch(err=>{
+        //         return res.status(400).json({status:"failure",message:"Failed to delete Profile"})
+        //     })
+            
+        // }
+        // catch{
+        //     return res.status(400).json({status:"failure",message:"Profile not deleted"})
+        // }
+

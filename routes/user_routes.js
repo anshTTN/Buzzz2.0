@@ -9,6 +9,8 @@ const userFriendsController = require('../controller/friends_controller');
 
 router.post("/searchusers",auth.verifyUsers, userFriendsController.searchUsers); /* Done */
 
+router.delete("/deleteuser",auth.verifyUsers, userFriendsController.deleteUser); /* Done */
+
 router.post("/searchallusers",auth.verifyUsers, userFriendsController.searchAllUsers); /* Done */
 
 router.post("/searchrequests",auth.verifyUsers, userFriendsController.searchRequests); /* Done */

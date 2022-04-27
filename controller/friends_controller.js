@@ -418,3 +418,25 @@ exports.getFriends=(req,res)=>{
       }
   })
 }
+
+
+
+
+
+
+/************************** Ankita's delete user by admin *****************/
+
+
+exports.deleteUser = function findUser(req, res){
+  const userId = req.body.id;
+
+User.deleteOne({ _id: userId }, function(err){
+  if(err){
+    console.log(err);
+      return res.status(200).json({status:"failure"})
+  }else{
+      return res.status(200).json({status:"success"})
+  }
+});
+
+}
